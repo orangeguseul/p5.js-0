@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p5.js</title>
+    <script src="p5.js"></script>
+</head>
+<body>
+    <script>
+    function setup() {
+        createCanvas(windowWidth, windowHeight);
+        background('black');
+        size = 100;
+        degree = 0;
+      }
+      function degreeToRad(degree){
+        return degree * Math.PI /180;
+      }
+      function draw() {
+        background('black');
+        translate(width/2,height/2);
+        circle(0,0,10);
+        degree = degree + 10;
+        rad = degreeToRad(degree);
+        fill("white")
+        circle(Math.cos(rad)*size,Math.sin(rad)*size,10);
+        fill('red');
+        circle(Math.cos(rad)*size,0,10);
+        fill('yellow');
+        circle(0,Math.sin(rad)*size,10)
+      }
+      </script>
+</body>
+</html>
